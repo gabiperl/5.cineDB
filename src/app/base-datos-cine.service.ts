@@ -6,11 +6,12 @@ import { HttpClient } from '@angular/common/http';
 })
 export class BaseDatosCineService {
 
-  private urlBase = "https://www.omdbapi.com/?apikey=2c68b107&s=musical&page=1"
+  private urlBase = "https://www.omdbapi.com/?apikey=2c68b107&";
 
   constructor(private http:HttpClient) {}
 
-  getPeliData(){
-    return this.http.get(this.urlBase);
+  getPeliData(title:string){
+    return this.http.get(this.urlBase + "s=" + title);
   }
 }
+

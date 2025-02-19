@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FavoritoComponent } from "./favorito/favorito.component";
+import { BaseDatosCineService } from '../../base-datos-cine.service';
 
 @Component({
   selector: 'app-favoritos',
@@ -8,5 +9,9 @@ import { FavoritoComponent } from "./favorito/favorito.component";
   styles: ``
 })
 export class FavoritosComponent {
+
+  peli:any[] = [];  
+  constructor(private peliCard:BaseDatosCineService) {}
+
 
 }

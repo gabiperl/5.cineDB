@@ -14,7 +14,21 @@ export class BuscadorComponent {
 
   constructor (private peliculas:BaseDatosCineService){}
 
+
+
+  getPelisData(pattern:string)
+  {this.peliculas.getPeliData(pattern).subscribe(
+    json => {
+      let datos:any = json;
+      this.pelis = datos.Search;
+    }
+  );
+  }
+
   getPelis()
-  {return this.pelis;}
+  {
+    console.log(this.pelis);
+    return this.pelis;
+  }
 
 }
